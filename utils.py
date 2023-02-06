@@ -18,7 +18,7 @@ def get_comments_all():
 
 def get_posts_by_user(user_name):
     list_posts = []
-    posts = load_data()
+    posts = load_posts()
     for post in posts:
         if user_name.lower() == post["poster_name"]:
             list_posts.append(post)
@@ -40,7 +40,7 @@ def get_comments_by_post_id(post_id):
 
 def search_for_posts(query):
     comment = []
-    for i in load_data():
+    for i in load_posts():
         if query.lower() in i["content"].lower():
             comment.append(i)
     return comment
